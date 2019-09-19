@@ -23,7 +23,7 @@
                     "type" : "number",
                     "format": "float",
                     "default" : 0.005,
-                    "description" : "Mininum improvement between epoches to reset early stopping. default is scales the delta by the best loss."
+                    "description" : "Minimum improvement between epoches to reset early stopping. default is scales the delta by the best loss."
                 },
             "nbest" : {
                 "type" : "integer",

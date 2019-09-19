@@ -41,7 +41,7 @@
             "type" : "number",
             "format": "float",
             "default" : 1,
-            "description" : "The frequency of how often to save the model paratmeters during training. The unit is in epoches."
+            "description" : "The frequency of how often to save the model parameters during training. The unit is in epoches."
         },
         "continue_from": {
             "type": "object",

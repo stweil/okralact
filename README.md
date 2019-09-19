@@ -26,7 +26,7 @@ Coming soon.
     <img src="docs/Framework.png" style="zoom:20%"/> 
 </center>
 
-**Okralact** is both a set of specifications and a prototype implementation for harmonizing the input data, parameterization and provenance tracking of training different OCR engines. It is a client/server architecture application. The interactions between the client nodes and the server are implementeqd using **Flask**, a lightweight web application framework for Python. All the training or evaluation jobs submitted to the server are handled in the background by task queues implemented wth **Redis Queue** (**RQ**).  
+**Okralact** is both a set of specifications and a prototype implementation for harmonizing the input data, parameterization and provenance tracking of training different OCR engines. It is a client/server architecture application. The interactions between the client nodes and the server are implemented using **Flask**, a lightweight web application framework for Python. All the training or evaluation jobs submitted to the server are handled in the background by task queues implemented with **Redis Queue** (**RQ**).
 
 The folder *app* contains the code for the web-application and task queues. The folder *app/templates* defined a set of web interfaces that the users directly interacted with.  Through these webpages, the user can 
 
@@ -42,7 +42,7 @@ The folder *app* contains the code for the web-application and task queues. The 
    	*	validation report, where the character error rate and word error rate for  each  itermediate  model could be found. The  frequency to save the intermediate is defined by the parameter  "save_frequency". User can use the report to decide which model to use and see the training curve.
    	*	evaluation report, contains the evaluation result for a user selected model on a user selected  dataset.
 
-The file *app/route.py* contains the code for handling the users' HTTP requests and responses with Flask,  and the code for processing the users' jobs with Redis Queue. There are three task queues running in the backend,  i.e., the training queue, the validation queue and the evaluation queue. Each type of job submitted by the user would be put into its corresponding task queue, where it will wait to be excuted. 
+The file *app/route.py* contains the code for handling the users' HTTP requests and responses with Flask,  and the code for processing the users' jobs with Redis Queue. There are three task queues running in the backend,  i.e., the training queue, the validation queue and the evaluation queue. Each type of job submitted by the user would be put into its corresponding task queue, where it will wait to be executed.
 
 When a job gets opportunity to run, it will call the common API for training, validation or evaluation defined in the folder *engines*. The jobs in training task queue, validating task queue and evaluating task queue will call the API defined in the file *train.py*, *valid.py* and *eval.py* respectively. 
 

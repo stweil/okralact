@@ -23,7 +23,7 @@ Steps:
 
      * **Output**: data/ground-truth/all-boxes
 
-     * **Comand**
+     * **Command**
 
        ```bash
        find ground-truth -name 'data/ground-truth/*.box' -exec cat {} \; > data/all_boxes
@@ -47,7 +47,7 @@ Steps:
 
      * **Output**: 'data/ground-truth/???.lstmf'
 
-     * **Comand**:
+     * **Command**:
 
        ```bash
        tesseract data/ground-truth/???.tif data/ground-truth/??? --psm 7 lstm.train

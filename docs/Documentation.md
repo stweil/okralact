@@ -25,7 +25,7 @@ Elevators for different engines:
 |                         | Number of Hidden units                      |                                                              |                                                        | :heavy_check_mark:                                           |                                                              |
 |                         | Specify Model Layers                        | :heavy_check_mark:                                           | :heavy_check_mark:                                     | ❌                                                            | :heavy_check_mark:                                           |
 |                         | Modify top layers                           | :heavy_check_mark:                                           | :heavy_check_mark:                                     | ❌                                                            |                                                              |
-|                         | load exisiting model                        | :heavy_check_mark:                                           | :heavy_check_mark:                                     | :heavy_check_mark:                                           | **:heavy_check_mark:**                                       |
+|                         | load existing model                         | :heavy_check_mark:                                           | :heavy_check_mark:                                     | :heavy_check_mark:                                             | **:heavy_check_mark:**                                       |
 |                         | Range of random Initialization of weights   | :heavy_check_mark:                                           | ❌                                                      | ❌                                                            | ❌                                                            |
 | Training Specifications | Learning    Rate                            | :heavy_check_mark:                                           | :heavy_check_mark:                                     | ✔️                                                            | ❌                                                            |
 |                         | Learning Rate for each layer                | :heavy_check_mark:                                           | ❌                                                      | ❌                                                            |                                                              |
@@ -90,7 +90,7 @@ Elevators for different engines:
 | Model           | --unidirectional                                    | use only unidirectional LSTM                                 |
 | Train           | --updates                                           | verbose LSTM updates                                         |
 | Train           | --load LOAD                                         | start training with a previously trained model               |
-| :question:Train | --start START                                       | manually set the number of already learned lines, which influences the naming and stoping condition,  default: -1 which will then be overriden by the value  saved in the network |
+| :question:Train | --start START                                       | manually set the number of already learned lines, which influences the naming and stopping condition,  default: -1 which will then be overridden by the value  saved in the network |
 | :question:      | -X EXECUTE, --exec EXECUTE                          | execute before anything else (usually used for imports)      |
 | Info            | -v, --verbose                                       |                                                              |
 | Info            | -d DISPLAY, --display DISPLAY                       | display output for every nth iteration, where  n=DISPLAY, default: 0 |
@@ -111,7 +111,7 @@ Elevators for different engines:
 
 4. [**comparison**](#comparison-of-ocr-engines)
 
-   The first block defines the input in order of **[batch, heigh, width, channels]** with **zero-valued dimensions being variable**. Integer valued height or width input specifications will result in the input images being automatically scaled in either dimension.
+   The first block defines the input in order of **[batch, height, width, channels]** with **zero-valued dimensions being variable**. Integer valued height or width input specifications will result in the input images being automatically scaled in either dimension.
 
    When **channels** are set to **1 grayscale** or **B/W inputs** are expected, **3** expects **RGB color images**. Higher values in combination with a **height of 1** result in the network being fed **1 pixel wide grayscale strips scaled to the size of the channel dimension**.
 
@@ -174,7 +174,7 @@ Elevators for different engines:
    s (optional) summarizes the output in the requested dimension, return the last step.
    ```
 
-   Adds either an LSTM or GRU recurrent layer to the network using eiter the x (width) or y (height) dimension as the time axis. Input features are the channel dimension and the non-time-axis dimension (height/width) is treated as another batch dimension. For example, a Lfx25 layer on an 1, 16, 906, 32 input will execute 16 independent forward passes on 906x32 tensors resulting in an output of shape 1, 16, 906, 25. If this isn’t desired either run a summarizing layer in the other direction, e.g. Lfys20 for an input 1, 1, 906, 20, or prepend a reshape layer S1(1x16)1,3 combining the height and channel dimension for an 1, 1, 906, 512 input to the recurrent layer.
+   Adds either an LSTM or GRU recurrent layer to the network using either the x (width) or y (height) dimension as the time axis. Input features are the channel dimension and the non-time-axis dimension (height/width) is treated as another batch dimension. For example, a Lfx25 layer on an 1, 16, 906, 32 input will execute 16 independent forward passes on 906x32 tensors resulting in an output of shape 1, 16, 906, 25. If this isn’t desired either run a summarizing layer in the other direction, e.g. Lfys20 for an input 1, 1, 906, 20, or prepend a reshape layer S1(1x16)1,3 combining the height and channel dimension for an 1, 1, 906, 512 input to the recurrent layer.
 
    ### Helper and Plumbing Layers
 

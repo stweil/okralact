@@ -18,7 +18,7 @@
         "type" : "number",
         "format" : "integer",
         "default" : -1,
-        "description": "Manually set the number of already learned lines, which influences the naming and stoping condition."
+        "description": "Manually set the number of already learned lines, which influences the naming and stopping condition."
     },
     "codec":
     {
