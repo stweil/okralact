@@ -68,7 +68,7 @@ When a job gets opportunity to run, it will call the common API for training, va
 
 *  *translate_model.py*, translate the unified definition of neural network structures to the engine -specific model structure definition language.
 
-* *process_tesseract.py*, define the steps to  preprocess the data fo tesseract.
+* *process_tesseract.py*, define the steps to preprocess the data for tesseract.
 
   
 

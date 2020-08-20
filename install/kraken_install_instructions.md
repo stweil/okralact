@@ -2,7 +2,7 @@
 
 https://github.com/mittagessen/kraken
 
-## Installtion:
+## Installation:
 
 
 

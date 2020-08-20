@@ -15,4 +15,4 @@ Other compilers might work, but are not officially supported.
 
 If you choose to compile from source, then you should copy the files in the folder "tesseract_patch" to the downloaded source code "tesseract/src/training".
 
-For MacOS users, there is a detailed installation instrcution here: https://github.com/tesseract-ocr/tesseract/issues/1453
+For MacOS users, there is a detailed installation instruction here: https://github.com/tesseract-ocr/tesseract/issues/1453

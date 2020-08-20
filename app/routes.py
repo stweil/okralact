@@ -434,7 +434,7 @@ def upload():
             'content': 'ideally it should contain all information about the training data, the parameters, the result accuracy, ...',
             'usage': 'this gets uploaded as metadata.json along with the model'
         },
-        related_DOI=[('cites', '123')], # should other DOI be refered to, add them here as pairs (link, doi), otherwise set this to None
+        related_DOI=[('cites', '123')], # should other DOI be referred to, add them here as pairs (link, doi), otherwise set this to None
         is_draft=True # if true, then the publish request will not be sent and the upload will stay as a draft
     )
     print('uploaded!')
